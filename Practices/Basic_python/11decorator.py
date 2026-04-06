@@ -44,3 +44,51 @@ def is_authenticated(func):
         else:
             print("Access Denied")
     return wrapper
+
+
+
+
+# simple lesson
+# Step 1 — basic function
+
+def enter_room():
+    print("Inside the room: Working...")
+
+# Step 2 — create a decorator
+
+def my_decorator(func):
+    def wrapper():
+        print("Opening the door...")
+        func()
+        print("Closing the door...")
+    return wrapper
+
+# Step 3 — apply it
+
+@my_decorator
+def enter_room():
+    print("Inside the room: Working...")
+
+# Step 4 — run it
+
+enter_room()
+
+# Output:
+# Opening the door...
+# Inside the room: Working...
+# Closing the door...
+
+
+# What’s happening mentally
+# enter_room is passed into my_decorator
+# my_decorator returns a new function (wrapper)
+# enter_room becomes that new function
+
+# A more flexible version:orator(func):
+def wrapper(*args, **kwargs):
+    print("Opening the door...")
+    result = func(*args, **kwargs)
+    print("Closing the door...")
+    return result
+    return wrapper
+# This works with any function.
