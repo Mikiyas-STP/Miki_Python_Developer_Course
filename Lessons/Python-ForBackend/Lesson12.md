@@ -118,3 +118,4 @@ Currently, it only checks `user_obj.is_active`. I want you to change it so it al
 Because in a real API, this is exactly how you handle "Role Based Access Control" (RBAC). It combines **Data Structures (Topic 1)**, **OOP (Topic 4)**, and **Decorators (Topic 5)**.
 
 **Try to rewrite just those two parts and show me. Does the "Big Picture" feel a little clearer now?**
+
