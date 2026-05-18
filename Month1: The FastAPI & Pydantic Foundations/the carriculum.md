@@ -1,7 +1,5 @@
 Here is your **Complete Master Roadmap**, detailed and expanded, including the "Deep Dive / Self-Study" topics that will make you stand out in interviews. I highly recommend copying this into a Notion page or a Word document.
-
 ---
-
 # 🗺️ The "London Python Backend" Master Roadmap
 
 ## Phase 1: The Python Foundation (COMPLETED)
