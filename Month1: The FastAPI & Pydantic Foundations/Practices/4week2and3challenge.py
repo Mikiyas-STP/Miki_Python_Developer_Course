@@ -1,14 +1,11 @@
 from fastapi import FastAPI, Depends, HTTPException, Header
 from pydantic import BaseModel
-
 app = FastAPI()
-
 # 1. THE SCHEMA (The Inspector)
 class Product(BaseModel):
     name: str
     price: float
     stock_count: int
-
 # 2. DEPENDENCY 1: The Bouncer (Security)
 # We tell FastAPI to look in the Headers for 'x-admin-token'
 def verify_admin(x_admin_token: str = Header(...)):

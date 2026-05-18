@@ -5,13 +5,10 @@ class UserSchema(BaseModel):
     username: str = Field(..., min_length=3, max_length=20)
     email: str
     age: int | None = None
-
-
 # What Pydantic does for you:
 # Parsing: It converts the incoming JSON string into a Python object.
 # Validation: It checks min_length, types, and required fields.
 # Error Handling: If validation fails, it sends a 422 Unprocessable Entity response back to the client automatically. You don't write any "if" statements.
-
 
 #real world backend example
 from fastapi import FastAPI
@@ -59,7 +56,6 @@ db.append(payload.dict())
     "category": "General"
   }
 ]
-
 
 # remember
 # product_dict = payload.model_dump() 

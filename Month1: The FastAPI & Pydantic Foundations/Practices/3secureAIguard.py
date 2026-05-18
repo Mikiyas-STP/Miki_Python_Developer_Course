@@ -1,7 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, status
-
 app = FastAPI()
-
 # 1. The Dependency (The Security Guard)
 def verify_api_key(api_key: str):
     # Use == for value comparison
