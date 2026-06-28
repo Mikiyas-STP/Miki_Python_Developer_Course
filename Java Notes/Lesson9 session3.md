@@ -554,3 +554,369 @@ Think about it from the compiler's perspective:
 > How would the compiler know where a class starts, where a loop begins, or whether a method returns a value if keywords didn't exist?
 
 This kind of reasoning is what distinguishes engineers from people who simply memorise syntax.
+
+
+1) it is reserved word 
+2) bc it is reserved 
+3) public is where it is accessible everywhere and private is where it is accessible inside the class itself 
+4) the purpose of static is to say that it belongs to that class
+5) void is return nothing and return is returning sth 
+6) it defineds sth new 
+7) i dont know 
+8) do it for me
+
+
+
+You're doing well. I can see that you're **understanding the ideas**, but sometimes your answers are a little too short. In an interview, you'd want to add one more sentence explaining **why**. Let's go through them.
+
+---
+
+# 1. What is a Java keyword?
+
+> **Your answer:** "it is reserved word"
+
+### ✅ Score: 9/10
+
+Correct.
+
+A stronger interview answer would be:
+
+> **A Java keyword is a reserved word with a predefined meaning in the Java language. It cannot be used as an identifier, such as a variable, method, or class name.**
+
+---
+
+# 2. Why can't you name a variable `if` or `class`?
+
+> **Your answer:** "bc it is reserved"
+
+### ✅ Score: 10/10
+
+Correct.
+
+To expand:
+
+> Because the compiler already uses these words to understand Java's syntax. If programmers could reuse them as variable names, the compiler would not know what they mean.
+
+---
+
+# 3. Difference between `public` and `private`
+
+> **Your answer:**
+>
+> "public is where it is accessible everywhere and private is where it is accessible inside the class itself"
+
+### ✅ Score: 10/10
+
+Excellent.
+
+That's exactly what I wanted.
+
+---
+
+# 4. What is the purpose of `static`?
+
+> **Your answer:**
+>
+> "the purpose of static is to say that it belongs to that class"
+
+### ✅ Score: 10/10
+
+Perfect.
+
+That's much better than Session 1.
+
+You've understood it.
+
+---
+
+# 5. Difference between `void` and `return`
+
+> **Your answer:**
+>
+> "void is return nothing and return is returning sth"
+
+### ✅ Score: 9.5/10
+
+Correct.
+
+Let's make it even clearer.
+
+```java
+public static void hello() {
+    System.out.println("Hello");
+}
+```
+
+This method performs an action.
+
+It gives nothing back.
+
+---
+
+```java
+public static int add(int a, int b) {
+    return a + b;
+}
+```
+
+Here:
+
+```java
+return a + b;
+```
+
+sends an integer back.
+
+Think of `return` as:
+
+> "Here is the result you asked for."
+
+---
+
+# 6. What does `new` do?
+
+> **Your answer:**
+>
+> "it defineds sth new"
+
+### ⚠️ Almost.
+
+Not "defines."
+
+It **creates** a new object.
+
+Example:
+
+```java
+Scanner scanner = new Scanner(System.in);
+```
+
+Here,
+
+```java
+new Scanner(...)
+```
+
+creates a brand-new `Scanner` object.
+
+So the interview answer is:
+
+> The `new` keyword creates a new object in memory.
+
+---
+
+# 7. What is `final`?
+
+You said:
+
+> I don't know.
+
+That's completely fine.
+
+This is actually an important keyword.
+
+Imagine this:
+
+```java
+final double PI = 3.14159;
+```
+
+Later:
+
+```java
+PI = 5;
+```
+
+Java says:
+
+> ❌ No.
+
+Why?
+
+Because
+
+```java
+final
+```
+
+means
+
+> This value cannot change after it has been assigned.
+
+Think of it like writing with permanent marker instead of pencil.
+
+You can read it.
+
+You cannot overwrite it.
+
+---
+
+# 8. Let's do it together
+
+### a) Create an object
+
+```java
+new
+```
+
+Example
+
+```java
+Scanner scanner = new Scanner(System.in);
+```
+
+---
+
+### b) Define a class
+
+```java
+class
+```
+
+Example
+
+```java
+public class Car {
+}
+```
+
+---
+
+### c) Repeat code
+
+There are several loop keywords, but the expected answer is
+
+```java
+for
+```
+
+Example
+
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
+
+---
+
+### d) Import another class
+
+```java
+import
+```
+
+Example
+
+```java
+import java.util.Scanner;
+```
+
+---
+
+### e) Stop a loop immediately
+
+```java
+break
+```
+
+Example
+
+```java
+for (int i = 0; i < 10; i++) {
+
+    if (i == 5) {
+        break;
+    }
+
+}
+```
+
+The loop stops as soon as `i` becomes `5`.
+
+---
+
+# Engineer's Challenge
+
+> **Why does Java need keywords?**
+
+This is the most important question.
+
+Imagine Java had **no keywords**.
+
+Instead of:
+
+```java
+public class Main {
+
+}
+```
+
+You could write:
+
+```java
+banana apple Main {
+
+}
+```
+
+How would the compiler know:
+
+* where a class begins?
+* where a loop starts?
+* whether a method returns a value?
+* whether something is private or public?
+
+It couldn't.
+
+Keywords give Java a **grammar**, just as words like **if**, **while**, and **because** give English a grammar.
+
+Without keywords, the compiler would have no consistent way to understand your program.
+
+---
+
+# Progress Check
+
+You've now completed:
+
+* ✅ Session 1 — Java Basics
+* ✅ Session 2 — Variables & Primitive Types
+* ✅ Session 3 — Java Keywords
+
+Notice how the sessions build on each other:
+
+```
+Session 1
+How Java works
+        ↓
+Session 2
+What data Java stores
+        ↓
+Session 3
+How Java describes code
+        ↓
+Session 4
+How Java makes decisions (if / else)
+```
+
+You're building the foundations in the right order.
+
+---
+
+## C1 English upgrade
+
+A few small improvements to your wording:
+
+* ❌ "bc it is reserved"
+
+  * ✅ "Because it is a reserved keyword."
+
+* ❌ "it defineds sth new"
+
+  * ✅ "It creates a new object."
+
+* ❌ "void is return nothing"
+
+  * ✅ "A `void` method does not return a value."
+
+These are the kinds of phrases you'll hear and use in professional technical discussions.
