@@ -578,3 +578,378 @@ long distance = 5000000000;
 ```
 
 Take your time. I won't just mark your answers—I’ll explain the reasoning behind them, just as we did in Session 1.
+
+1) when we are declaring a variable we are creating it but when we initialise it we are just assigning a value to it. 
+2) java is called statically typed because it is told what kind of type it is using before execution 
+3) primitive types are simple data types while referenced types are created using the primitive types and are often a larger size 4) string is not primitiv enbecause it is long and use different operations and values iin it . 
+5) int,float,boolean,char,long 
+6) data and value mismatch , no problem , no problem
+
+
+
+Great work. You're not just recalling facts—you’re reasoning about them. That's a much stronger way to learn.
+
+I'll review your answers like I would in a technical interview.
+
+---
+
+# 1. Declaration vs Initialisation
+
+> **Your answer:**
+>
+> "when we are declaring a variable we are creating it but when we initialise it we are just assigning a value to it."
+
+### ✅ Score: 10/10
+
+Excellent.
+
+The only word I'd slightly change is **creating**.
+
+A more precise answer is:
+
+* **Declaration**: Introduces the variable by specifying its type and name.
+* **Initialisation**: Assigns the variable its first value.
+
+Example:
+
+```java
+int age;      // Declaration
+age = 25;     // Initialisation
+```
+
+or
+
+```java
+int age = 25; // Declaration + Initialisation
+```
+
+---
+
+# 2. Why is Java statically typed?
+
+> **Your answer:**
+>
+> "java is called statically typed because it is told what kind of type it is using before execution"
+
+### ✅ Score: 9.5/10
+
+Very good.
+
+A tiny improvement:
+
+> Java is statically typed because every variable has a known type at **compile time**, before the program runs.
+
+Notice that **compile time** is the key term interviewers like to hear.
+
+---
+
+# 3. Primitive vs Reference Types
+
+> **Your answer:**
+>
+> "primitive types are simple data types while referenced types are created using the primitive types and are often a larger size"
+
+### ✅ Score: 8.5/10
+
+Good understanding, but let's refine one point.
+
+The phrase:
+
+> "reference types are created using the primitive types"
+
+is **not always true**.
+
+For example:
+
+```java
+String name = "Mike";
+```
+
+A `String` is **made up of characters**, but not every reference type is built directly from primitives in a simple way.
+
+The most important distinction is:
+
+### Primitive
+
+Stores the actual value directly.
+
+```java
+int age = 25;
+```
+
+```
+age
+ ↓
+25
+```
+
+### Reference
+
+Stores a **reference (address)** to an object.
+
+```java
+String name = "Mike";
+```
+
+```
+name
+  │
+  ▼
+"Mike"
+```
+
+That "pointer to an object" idea is the key difference.
+
+---
+
+# 4. Why isn't `String` primitive?
+
+> **Your answer:**
+>
+> "string is not primitive because it is long and use different operations and values in it"
+
+### ✅ Score: 8.5/10
+
+You're thinking in the right direction.
+
+The length of the string isn't the main reason.
+
+The real reason is that a `String` is an **object**.
+
+It has:
+
+* data
+* methods
+* behaviour
+
+For example:
+
+```java
+String name = "Mike";
+
+name.length();
+name.toUpperCase();
+name.substring(1);
+```
+
+An `int` cannot do this.
+
+```java
+int age = 25;
+
+// Impossible
+age.length();
+```
+
+That's why `String` is a reference type rather than a primitive.
+
+---
+
+# 5. Choose the correct primitive type
+
+### Person's age
+
+You answered:
+
+> `int`
+
+✅ Correct.
+
+---
+
+### Product price
+
+You answered:
+
+> `float`
+
+⚠️ Almost.
+
+For this course, and in most Java applications, we'd use:
+
+```java
+double
+```
+
+Even though **financial software** often uses `BigDecimal` instead of `double` to avoid rounding errors, `double` is the expected answer here.
+
+---
+
+### Logged in?
+
+You answered:
+
+> `boolean`
+
+✅ Correct.
+
+---
+
+### Grade
+
+You answered:
+
+> `char`
+
+✅ Correct.
+
+---
+
+### Population of Earth
+
+You answered:
+
+> `long`
+
+✅ Correct.
+
+Excellent.
+
+---
+
+# 6. Find the errors
+
+## First
+
+```java
+int age = "25";
+```
+
+You answered:
+
+> data and value mismatch
+
+### ✅ Correct.
+
+More specifically:
+
+> Type mismatch. An `int` variable cannot store a `String`.
+
+---
+
+## Second
+
+```java
+char grade = "A";
+```
+
+You answered:
+
+> no problem
+
+### ❌ This one **does** have a problem.
+
+Remember:
+
+A `char` stores **one character**, written with **single quotes**.
+
+Correct:
+
+```java
+char grade = 'A';
+```
+
+Wrong:
+
+```java
+char grade = "A";
+```
+
+Why?
+
+Because:
+
+```java
+"A"
+```
+
+is a **String**, not a `char`.
+
+---
+
+## Third
+
+```java
+long distance = 5000000000;
+```
+
+You answered:
+
+> no problem
+
+### ❌ This is another common beginner mistake.
+
+The value `5000000000` is **too large for an `int`**.
+
+By default, whole number literals are treated as `int`.
+
+So Java tries to interpret it as an `int` before assigning it to the `long`.
+
+The fix is:
+
+```java
+long distance = 5000000000L;
+```
+
+The `L` tells the compiler:
+
+> "Treat this literal as a `long`."
+
+---
+
+# Overall Score
+
+| Question                      |  Score |
+| ----------------------------- | -----: |
+| Declaration vs Initialisation |  10/10 |
+| Static typing                 | 9.5/10 |
+| Primitive vs Reference        | 8.5/10 |
+| Why String isn't primitive    | 8.5/10 |
+| Choosing types                |   9/10 |
+| Finding errors                |   7/10 |
+
+## Final Score: **8.8/10** 🎉
+
+That's a strong result. The mistakes you made are exactly the kinds of things almost every Java beginner gets wrong.
+
+---
+
+# Two concepts to remember
+
+These are worth memorising because you'll use them constantly.
+
+### Rule 1: `char` vs `String`
+
+```java
+char letter = 'A';      // ✅ Single character
+String text = "A";      // ✅ Text (even if it's one character)
+```
+
+**Memory trick:**
+
+* `' '` → **char** (single quotes)
+* `" "` → **String** (double quotes)
+
+---
+
+### Rule 2: Large `long` values need `L`
+
+```java
+long population = 8000000000L;
+```
+
+Without the `L`, Java assumes the number is an `int` literal first, which causes a compile-time error if it's too large.
+
+---
+
+## C1 English upgrade
+
+You wrote:
+
+> "it is told what kind of type it is using before execution"
+
+A more natural technical phrasing would be:
+
+> **Its data type is determined at compile time before the program is executed.**
+
+That's the kind of wording you'll often hear in interviews and technical discussions.
