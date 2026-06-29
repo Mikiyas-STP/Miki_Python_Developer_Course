@@ -818,3 +818,418 @@ public static int getAge() {
 This method doesn't print anything. Instead, it **returns** the value `25` so the code that called it can use it.
 
 Understanding this distinction will make the upcoming exercises (`greetUser` and `calculateSum`) much easier, because both require you to **return** values rather than simply print them.
+
+
+
+
+
+
+
+
+
+I'm glad this pace is working well. We'll continue exactly in the order of your Baeldung resource.
+
+---
+
+# 📚 Lesson 2 – Part 3: Method Identifier
+
+Baeldung says:
+
+> **The method identifier is the name we assign to a method specification.**
+
+Let's break that down.
+
+---
+
+# What is a Method Identifier?
+
+A **method identifier** is simply the **name of the method**.
+
+For example:
+
+```java
+public static void printMessage() {
+
+}
+```
+
+The method identifier is:
+
+```text
+printMessage
+```
+
+It's the name Java uses to identify this method.
+
+Think of it like a person's name.
+
+If you say:
+
+> "Mike"
+
+everyone knows who you're referring to.
+
+Similarly, when Java sees:
+
+```java
+printMessage();
+```
+
+it knows exactly which method to execute.
+
+---
+
+# Where is the Method Identifier?
+
+Let's look at another example.
+
+```java
+public static String greetUser(String name) {
+    return "Hello " + name;
+}
+```
+
+Break it down:
+
+```text
+public      → access modifier
+static      → keyword
+String      → return type
+greetUser   → method identifier
+(String name) → parameter list
+```
+
+The method identifier always comes **after the return type**.
+
+---
+
+# Why Do We Need a Method Name?
+
+Imagine a class with several methods.
+
+```java
+public class Main {
+
+    static void greetUser() {
+
+    }
+
+    static void calculateSum() {
+
+    }
+
+    static void printReport() {
+
+    }
+
+}
+```
+
+Each method performs a different task.
+
+Without names, Java wouldn't know which one you wanted to call.
+
+When you write:
+
+```java
+calculateSum();
+```
+
+Java looks for the method whose identifier is `calculateSum`.
+
+---
+
+# Choosing Good Method Names
+
+Baeldung says:
+
+> **It is good practice to use an informative and descriptive name.**
+
+This means the name should clearly describe what the method does.
+
+Good examples:
+
+```java
+calculateSum()
+```
+
+```java
+printReport()
+```
+
+```java
+greetUser()
+```
+
+From just the name, you can already guess the method's purpose.
+
+---
+
+# Poor Method Names
+
+These names don't explain the method well:
+
+```java
+method1()
+```
+
+```java
+doThing()
+```
+
+```java
+abc()
+```
+
+If someone else reads your code, they won't know what those methods are supposed to do.
+
+This is why Baeldung recommends descriptive names.
+
+---
+
+# Java Naming Convention
+
+Baeldung also says:
+
+> **The method identifier should be a verb in lowercase that can be followed by adjectives and/or nouns.**
+
+Let's look at what that means.
+
+### Start with a verb
+
+A verb describes an action.
+
+Examples:
+
+```text
+print
+calculate
+save
+read
+write
+get
+set
+```
+
+---
+
+### Add more words if needed
+
+```text
+printMessage
+```
+
+Verb:
+
+```text
+print
+```
+
+Noun:
+
+```text
+Message
+```
+
+---
+
+Another example:
+
+```text
+calculateSum
+```
+
+Verb:
+
+```text
+calculate
+```
+
+Noun:
+
+```text
+Sum
+```
+
+---
+
+Another:
+
+```text
+greetUser
+```
+
+Verb:
+
+```text
+greet
+```
+
+Noun:
+
+```text
+User
+```
+
+This naming style makes code much easier to read.
+
+---
+
+# Java Uses camelCase
+
+Notice something about these names.
+
+```text
+calculateSum
+```
+
+The first word starts with a lowercase letter.
+
+Each following word starts with a capital letter.
+
+This style is called **camelCase**.
+
+Examples:
+
+```text
+printName
+```
+
+```text
+getAge
+```
+
+```text
+calculateTotalPrice
+```
+
+Baeldung doesn't explicitly explain camelCase, but all of its examples follow this Java naming convention.
+
+---
+
+# Interesting Fact from Baeldung
+
+The article mentions:
+
+> **A method identifier can have at most 65,536 characters.**
+
+Technically, Java allows extremely long method names.
+
+For example (don't do this in practice!):
+
+```java
+calculateTheTotalPriceIncludingTaxAndShippingForAllProducts()
+```
+
+This is valid, but unnecessarily long.
+
+The important takeaway is simply that Java has a maximum limit, even though you'll never come close to it in normal programming.
+
+---
+
+# Summary
+
+From Baeldung:
+
+* The **method identifier** is the method's name.
+* It comes after the return type.
+* Java uses it to identify and call the method.
+* Choose informative and descriptive names.
+* Method names should usually begin with a verb.
+* Java uses camelCase for method names.
+* A method identifier can be up to **65,536 characters** long.
+
+---
+
+# 📝 Quick Check
+
+### Question 1
+
+What is the method identifier?
+
+```java
+public static int calculateSum(int a, int b) {
+
+}
+```
+
+---
+
+### Question 2
+
+According to Baeldung, what kind of names should methods have?
+
+---
+
+### Question 3
+
+Which of these is the better method name?
+
+```text
+method1()
+```
+
+or
+
+```text
+calculateAverage()
+```
+
+Why?
+
+---
+
+### Question 4
+
+Where does the method identifier appear?
+
+A.
+
+Before the return type
+
+B.
+
+After the return type
+
+C.
+
+Inside the parameter list
+
+---
+
+### Question 5
+
+Identify every part we've learned so far:
+
+```java
+public static String greetUser(String name) {
+    return "Hello " + name;
+}
+```
+
+Try to identify:
+
+* Access modifier
+* `static`
+* Return type
+* Method identifier
+
+*(Don't worry about the parameter list yet—that's our next topic.)*
+
+---
+
+# 📌 Progress Check
+
+So far, you've learned **4 of the 6 parts** that Baeldung describes:
+
+| Part                                      | Status     |
+| ----------------------------------------- | ---------- |
+| ✅ Access modifier                         | Complete   |
+| ✅ `static` keyword (explained in context) | Complete   |
+| ✅ Return type                             | Complete   |
+| ✅ Method identifier                       | Complete   |
+| ⏳ Parameter list                          | Next       |
+| ⏳ Exception list                          | After that |
+| ⏳ Method body                             | Final part |
+
+Notice that we're slowly building the ability to "read" a method from left to right. By the end of Lesson 2, you'll be able to look at almost any basic Java method and explain what every part means, which is exactly what your course resources are aiming for.
